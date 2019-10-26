@@ -45,24 +45,31 @@
   // }
 
 
-  var rect = {
-      x:0,
-      y:0,
+  var rect1 = {
+      x:20*3.2,
+      y:100*4,
+      width:20*3.2,
+      height:10*4
+  };
+  var rect2 = {
+      x:40*3.2,
+      y:100*4,
       width:20*3.2,
       height:10*4
   };
   // console.log(rect.x);
 //Function to get the mouse position
 function getMousePos(canvas, event) {
-    var rect = canvas.getBoundingClientRect();
+    var rect1 = canvas.getBoundingClientRect();
     return {
-        x: event.clientX - rect.left,
-        y: event.clientY - rect.top
+        x: event.clientX - rect1.left,
+        y: event.clientY - rect1.top
     };
 }
 //Function to check whether a point is inside a rectangle
 function isInside(pos, rect){
-  console.log(pos.x);
+  console.log("pos.x :",pos.x);
+  console.log("rect.x :", rect.x);
 
   console.log(rect.x+rect.width);
   console.log(pos.y);
@@ -78,30 +85,50 @@ var context = canvas.getContext('2d');
 //The rectangle should have x,y,width,height properties
 
 context.beginPath();
-context.rect(0, 0, 20, 10);
+context.rect(20, 100, 20, 10);
 context.fillStyle = '#FF0000';
 // context.fillStyle = 'rgba(225,225,225,10)';
-context.fillRect(0,0,20,10);
+context.fillRect(20,100,20,10);
 //context.fill();
 context.lineWidth = 1;
 context.strokeStyle = '#FF0000';
 context.stroke();
 context.closePath();
-context.font = '40pt Kremlin Pro Web';
-context.fillStyle = '#FF0000';
-// context.fillText('Start', 345, 415);
-// context.textAlign="center";
-// context.textBaseline = "middle";
-// context.fillText("Attack!",250+(200/2),350+(100/2));
+context.font = '8pt Kremlin Pro Web';
+context.fillStyle = '#000000';
+ // context.fillText('Start', 5, 5);
+ context.textAlign="center";
+context.textBaseline = "middle";
+ context.fillText("1",30,105);
+//rect2
+ context.beginPath();
+ context.rect(40, 100, 20, 10);
+ context.fillStyle = '#FF0000';
+ // context.fillStyle = 'rgba(225,225,225,10)';
+ context.fillRect(40,100,20,10);
+ //context.fill();
+ context.lineWidth = 1;
+ context.strokeStyle = '#FF0000';
+ context.stroke();
+ context.closePath();
+ context.font = '8pt Kremlin Pro Web';
+ context.fillStyle = '#000000';
+  // context.fillText('Start', 5, 5);
+  context.textAlign="center";
+ context.textBaseline = "middle";
+  context.fillText("1",30,105);
 
 //Binding the click event on the canvas
 canvas.addEventListener('click', function(evt) {
     // Playbutton(200,200,200,200,red,red);
     var mousePos = getMousePos(canvas, evt);
 
-    if (isInside(mousePos,rect)) {
-        alert('clicked inside rect');
-    }else{
+    if (isInside(mousePos,rect1)) {
+        alert('clicked inside rect1');
+    }
+    else if ()
+    else{
         alert('clicked outside rect');
     }
+
 }, false);
