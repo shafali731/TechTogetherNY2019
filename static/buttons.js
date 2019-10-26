@@ -1,50 +1,12 @@
-//
-// var c = document.getElementById('playground');
-// var context = c.getContext("2d");
-// var cleS = document.getElementById("clear");
-// var drawn = 0;
-// var warningTimeout;
-// var warningBox = document.createElement("div");
-// warningBox.className = "warning";
-// var lastX=false
-// var lastY=false
-
-// context.beginPath();
-//
-// function displayWarning(msg) { //display the warning and make sure it only stays for a while
-//   warningBox.innerHTML = msg;
-//
-//   if (document.body.contains(warningBox)) {
-//     window.clearTimeout(warningTimeout);
-//   } else {
-//     // insert warningBox after the clear button
-//     cleS.parentNode.insertBefore(warningBox, cleS.nextSibling);
-//   }
-//
-//   warningTimeout = window.setTimeout(function() {
-//       warningBox.parentNode.removeChild(warningBox);
-//       warningTimeout = -1;
-//     }, 2000);
-// }
-//
-//
-// var clear = function clr_canvas(evt) {
-//     if (drawn !=0){ //only if there was something drawn
-//       context.clearRect(0, 0, c.width, c.height);
-//       drawn = 0;
-//     }
-//     else{
-//       evt.preventDefault(); //prevents clear from happening unless something was drawn
-//       displayWarning( //displays this warning if the canvas was empty originally
-//               "You have to draw something to clear the canvas!"
-//             );    }
-// }
-
-// function Playbutton(top, left, width, height, lWidth, fillColor, lineColor) {
-
-  // }
-
-
+var button_pressed=false;
+var counter= 0;
+var dvd_but = document.getElementById("start");
+var first_game = [
+  [1,2,3,4,5,6,7,8,9,10],
+  [0,1,2,3,4,5,6,7,8,9],
+  [0,2,3,3,3,3,4,4,5,6],
+  [8,1,2,3,4,5,6,7,8,9]
+]
   var rect1 = {
       x:20*3.2,
       y:100*4,
@@ -70,6 +32,11 @@
       height:10*4
   };
   // console.log(rect.x);
+   function clr_canvas(evt) {
+        context.clearRect(0, 0, c.width, c.height);
+
+  }
+
 //Function to get the mouse position
 function getMousePos(canvas, event) {
     var rect1 = canvas.getBoundingClientRect();
@@ -91,11 +58,9 @@ function isInside(pos, rect){
 
     return pos.x> rect.x && pos.x < rect.x+rect.width && pos.y < rect.y+rect.height && pos.y > rect.y
 }
-
 var canvas = document.getElementById('playground');
 var context = canvas.getContext('2d');
-//The rectangle should have x,y,width,height properties
-
+function rects(){
 context.beginPath();
 context.rect(20, 100, 20, 10);
 context.fillStyle = '#FF0000';
@@ -163,10 +128,34 @@ context.textBaseline = "middle";
   context.textAlign="center";
  context.textBaseline = "middle";
   context.fillText("4",150,105);
+   // return false;
+}
+
+dvd_but.addEventListener('click', function(evt){
+  while(counter <5){
+    context.clearRect(0,0,960,600);
+    console.log("work")
+    // while (!button_pressed){
+      console.log("i");
+    rects();
+    console.log("uihiu");
+   // }
+  button_pressed = false;
+    console.log("hfei");
+    //context.clearRect(0,0,960,600);
+    counter ++;
+  }
+  //if(counter >=5){
+  //  context.clearRect(0,0,960,600);}
+} , false)
+
+
+//The rectangle should have x,y,width,height properties
 
 //Binding the click event on the canvas
 canvas.addEventListener('click', function(evt) {
     // Playbutton(200,200,200,200,red,red);
+  //  makeRects();
     var mousePos = getMousePos(canvas, evt);
 
     if (isInside(mousePos,rect1)) {
@@ -184,5 +173,6 @@ canvas.addEventListener('click', function(evt) {
     else{
         alert('clicked outside rect');
     }
+    button_pressed = true;
 
 }, false);
