@@ -52,7 +52,19 @@
       height:10*4
   };
   var rect2 = {
-      x:40*3.2,
+      x:60*3.2,
+      y:100*4,
+      width:20*3.2,
+      height:10*4
+  };
+  var rect3 = {
+      x:100*3.2,
+      y:100*4,
+      width:20*3.2,
+      height:10*4
+  };
+  var rect4 = {
+      x:140*3.2,
       y:100*4,
       width:20*3.2,
       height:10*4
@@ -102,10 +114,10 @@ context.textBaseline = "middle";
  context.fillText("1",30,105);
 //rect2
  context.beginPath();
- context.rect(40, 100, 20, 10);
+ context.rect(60, 100, 20, 10);
  context.fillStyle = '#FF0000';
  // context.fillStyle = 'rgba(225,225,225,10)';
- context.fillRect(40,100,20,10);
+ context.fillRect(60,100,20,10);
  //context.fill();
  context.lineWidth = 1;
  context.strokeStyle = '#FF0000';
@@ -116,7 +128,41 @@ context.textBaseline = "middle";
   // context.fillText('Start', 5, 5);
   context.textAlign="center";
  context.textBaseline = "middle";
-  context.fillText("1",30,105);
+  context.fillText("2",70,105);
+//rect3
+ context.beginPath();
+ context.rect(100, 100, 20, 10);
+ context.fillStyle = '#FF0000';
+ // context.fillStyle = 'rgba(225,225,225,10)';
+ context.fillRect(100,100,20,10);
+ //context.fill();
+ context.lineWidth = 1;
+ context.strokeStyle = '#FF0000';
+ context.stroke();
+ context.closePath();
+ context.font = '8pt Kremlin Pro Web';
+ context.fillStyle = '#000000';
+  // context.fillText('Start', 5, 5);
+  context.textAlign="center";
+ context.textBaseline = "middle";
+  context.fillText("3",110,105);
+//rect4
+ context.beginPath();
+ context.rect(140, 100, 20, 10);
+ context.fillStyle = '#FF0000';
+ // context.fillStyle = 'rgba(225,225,225,10)';
+ context.fillRect(140,100,20,10);
+ //context.fill();
+ context.lineWidth = 1;
+ context.strokeStyle = '#FF0000';
+ context.stroke();
+ context.closePath();
+ context.font = '8pt Kremlin Pro Web';
+ context.fillStyle = '#000000';
+  // context.fillText('Start', 5, 5);
+  context.textAlign="center";
+ context.textBaseline = "middle";
+  context.fillText("4",150,105);
 
 //Binding the click event on the canvas
 canvas.addEventListener('click', function(evt) {
@@ -126,7 +172,15 @@ canvas.addEventListener('click', function(evt) {
     if (isInside(mousePos,rect1)) {
         alert('clicked inside rect1');
     }
-    else if ()
+    else if (isInside(mousePos,rect2)){
+      alert('clicked inside rect2');
+    }
+    else if (isInside(mousePos,rect3)){
+      alert('clicked inside rect3');
+    }
+    else if (isInside(mousePos,rect4)){
+      alert('clicked inside rect4');
+    }
     else{
         alert('clicked outside rect');
     }
