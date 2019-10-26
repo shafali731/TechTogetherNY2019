@@ -43,11 +43,13 @@
 // function Playbutton(top, left, width, height, lWidth, fillColor, lineColor) {
 
   // }
+
+
   var rect = {
       x:0,
       y:0,
-      width:200,
-      height:100
+      width:20*3.2,
+      height:10*4
   };
   // console.log(rect.x);
 //Function to get the mouse position
@@ -62,9 +64,9 @@ function getMousePos(canvas, event) {
 function isInside(pos, rect){
   console.log(pos.x);
 
-  console.log(rect.x);
+  console.log(rect.x+rect.width);
   console.log(pos.y);
-  console.log(rect.y);
+  console.log(rect.y+rect.height);
 
 
 
@@ -76,10 +78,10 @@ var context = canvas.getContext('2d');
 //The rectangle should have x,y,width,height properties
 
 context.beginPath();
-context.rect(0, 0, 200, 100);
+context.rect(0, 0, 20, 10);
 context.fillStyle = '#FF0000';
 // context.fillStyle = 'rgba(225,225,225,10)';
-context.fillRect(0,0,200,100);
+context.fillRect(0,0,20,10);
 //context.fill();
 context.lineWidth = 1;
 context.strokeStyle = '#FF0000';
@@ -87,10 +89,10 @@ context.stroke();
 context.closePath();
 context.font = '40pt Kremlin Pro Web';
 context.fillStyle = '#FF0000';
-context.fillText('Start', 345, 415);
-context.textAlign="center";
-context.textBaseline = "middle";
-context.fillText("Attack!",250+(200/2),350+(100/2));
+// context.fillText('Start', 345, 415);
+// context.textAlign="center";
+// context.textBaseline = "middle";
+// context.fillText("Attack!",250+(200/2),350+(100/2));
 
 //Binding the click event on the canvas
 canvas.addEventListener('click', function(evt) {
