@@ -308,8 +308,9 @@ function similarities(){
 }
 similarities();
 console.log(dif);
-localStorage.setItem("differ", dif);
-localStorage.setItem("car", career);
+console.log(JSON.stringify(dif));
+localStorage.setItem("difference", JSON.stringify(dif));
+localStorage.setItem("car", careers);
 
 
 
