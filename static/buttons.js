@@ -17,27 +17,27 @@ var backgrounds = ["../images/question1.png","../images/question2.png","../image
 
 var game = [
   [
-  [1,2,3,4,5,6,7,8,9,3],
-  [0,1,2,3,4,5,6,7,8,3],
-  [0,2,3,3,3,3,4,4,5,3],
-  [8,1,2,3,4,5,6,7,8,5]
+  [2,1,4,0,5,0,2,1,4,1],
+  [3,2,0,2,0,2,2,2,2,5],
+  [0,0,3,0,7,0,3,1,6,0],
+  [1,3,1,3,2,1,1,0,5,3]
 ],
 [
-[1,2,3,4,5,6,7,8,9,5],
-[0,1,2,3,4,5,6,7,8,5],
-[0,2,3,3,3,3,4,4,5,6],
-[8,1,2,3,4,5,6,7,8,6]
+[3,1,5,0,4,1,0,0,2,5],
+[0,3,0,1,0,7,3,5,1,0],
+[4,4,1,1,0,1,4,1,0,4],
+[1,1,0,2,0,3,3,4,0,6]
 ],
 [
-[1,2,3,4,5,6,7,8,9,6],
-[0,1,2,3,4,5,6,7,8,7],
-[0,2,3,3,3,3,4,4,5,8],
-[8,1,2,3,4,5,6,7,8,9]
+[1,3,0,2,0,5,2,3,0,4],
+[3,5,1,2,1,1,3,1,1,2],
+[0,6,0,3,0,7,1,3,0,0],
+[2,0,5,3,5,0,0,0,5,0]
 ],
 [
-[1,2,3,4,5,6,7,8,9,3],
-[0,1,2,3,4,5,6,7,8,5],
-[0,2,3,3,3,3,4,4,5,5],
+[1,0,6,3,5,0,0,0,4,1],
+[2,0,3,0,5,0,4,0,6,6],
+[1,1,3,6,3,0,1,3,1,1],
 [8,1,2,3,4,5,6,7,8,7]
 ],
  [
@@ -50,27 +50,27 @@ var game = [
 
   var rect1 = {
       x:20*3.2,
-      y:32*4,
-      width:20*3.2,
-      height:10*4
+      y:32.5*4,
+      width:263*3.2,
+      height:7*4
   };
   var rect2 = {
       x:20*3.2,
-      y:42*4,
-      width:20*3.2,
-      height:10*4
+      y:42.5*4,
+      width:263*3.2,
+      height:7*4
   };
   var rect3 = {
       x:20*3.2,
-      y:52*4,
-      width:20*3.2,
-      height:10*4
+      y:52.5*4,
+      width:263.5*3.2,
+      height:7*4
   };
   var rect4 = {
       x:20*3.2,
-      y:62*4,
-      width:20*3.2,
-      height:10*4
+      y:62.5*4,
+      width:263*3.2,
+      height:7*4
   };
   // console.log(rect.x);
    function clr_canvas(evt) {
@@ -113,24 +113,24 @@ context.drawImage(pic, 0, 0, 960/3.2, 600/4);
 // context.rect(20, 100, 20, 10);
 context.fillStyle = '#FF0000';
 // context.fillStyle = 'rgba(225,225,225,10)';
-context.fillRect(20,32,20,7);
+// context.fillRect(20,32.5,263,7);
 //context.fill();
 context.lineWidth = 1;
 context.strokeStyle = '#FF0000';
 context.stroke();
 context.closePath();
 context.font = '8pt Kremlin Pro Web';
-context.fillStyle = '#000000';
+// context.fillStyle = '#000000';
  // context.fillText('Start', 5, 5);
  context.textAlign="center";
 context.textBaseline = "middle";
- context.fillText("1",30,36);
+ // context.fillText("1",30,36);
 //rect2
  context.beginPath();
  // context.rect(60, 100, 20, 10);
  context.fillStyle = '#FF0000';
  // context.fillStyle = 'rgba(225,225,225,10)';
- context.fillRect(20,42,20,7);
+ // context.fillRect(20,42,20,7);
  //context.fill();
  context.lineWidth = 1;
  context.strokeStyle = '#FF0000';
@@ -141,13 +141,13 @@ context.textBaseline = "middle";
   // context.fillText('Start', 5, 5);
   context.textAlign="center";
  context.textBaseline = "middle";
-  context.fillText("2",30,46);
+  // context.fillText("2",30,46);
 //rect3
  context.beginPath();
  // context.rect(100, 100, 20, 10);
  context.fillStyle = '#FF0000';
  // context.fillStyle = 'rgba(225,225,225,10)';
- context.fillRect(20,52,20,7);
+ // context.fillRect(20,52,20,7);
  //context.fill();
  context.lineWidth = 1;
  context.strokeStyle = '#FF0000';
@@ -157,14 +157,14 @@ context.textBaseline = "middle";
  context.fillStyle = '#000000';
   // context.fillText('Start', 5, 5);
   context.textAlign="center";
- context.textBaseline = "middle";
-  context.fillText("3",30,56);
+ // context.textBaseline = "middle";
+  // context.fillText("3",30,56);
 //rect4
  context.beginPath();
  // context.rect(140, 100, 20, 10);
  context.fillStyle = '#FF0000';
  // context.fillStyle = 'rgba(225,225,225,10)';
- context.fillRect(20,62,20,7);
+ // context.fillRect(20,62,20,7);
  //context.fill();
  context.lineWidth = 1;
  context.strokeStyle = '#FF0000';
@@ -175,7 +175,7 @@ context.textBaseline = "middle";
   // context.fillText('Start', 5, 5);
   context.textAlign="center";
  context.textBaseline = "middle";
-  context.fillText("4",30,66);
+  // context.fillText("4",30,66);
 
 // }
 // else{
