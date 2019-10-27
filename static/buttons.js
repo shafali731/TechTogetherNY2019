@@ -278,8 +278,11 @@ canvas.addEventListener('click', function(evt) {
   // }
   console.log("leadership ", leadership);
   console.log("problem ", problem_solving);
+  localStorage.setItem("leadership", leadership);
+  // var obj = {""}
+  // localStorage.setItem('myStorage', JSON.stringify(obj));
+
+
 
 
 }, false);
-
-console.log("leadership ", leadership);
