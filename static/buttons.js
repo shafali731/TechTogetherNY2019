@@ -1,7 +1,9 @@
+var canvas = document.getElementById('playground');
+var context = canvas.getContext('2d');
 var bu_clicked = 0;
 var b_count = 0;
 var counter= 0;
-var dvd_but = document.getElementById("start");
+// var dvd_but = document.getElementById("start");
 var attributes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 // var leadership =0;
 // var social_skills =0;
@@ -113,8 +115,7 @@ function isInside(pos, rect){
 
     return pos.x> rect.x && pos.x < rect.x+rect.width && pos.y < rect.y+rect.height && pos.y > rect.y
 }
-var canvas = document.getElementById('playground');
-var context = canvas.getContext('2d');
+
 function rects(){
   // if(counter <5){
 context.beginPath();
@@ -200,7 +201,8 @@ context.textBaseline = "middle";
    // return false;
 }
 
-dvd_but.addEventListener('click', function(evt){
+
+document.addEventListener('load', function(evt){
   b_count = 0;
 
 
@@ -209,6 +211,10 @@ dvd_but.addEventListener('click', function(evt){
     // console.log("work")
     // while (!button_pressed){
       // console.log("i");
+      var pics = new Image();
+      console.log("b_count", b_count);
+      pics.src= backgrounds[b_count];
+      context.drawImage(pics, 0, 0, 960, 600);
     rects();
     // console.log("hello");
    // }
@@ -221,7 +227,7 @@ dvd_but.addEventListener('click', function(evt){
   //  context.clearRect(0,0,960,600);}
  , false)
 function ending(){
-  window.location.href = "../templates/endpage.html";
+  window.location.href = "../templates/floats.html";
   // console.log("hduh");
 }
 
@@ -269,15 +275,15 @@ canvas.addEventListener('click', function(evt) {
       counter --;
     }
     counter ++;
-    if(counter ==5){
-      ending();
-    }
+    // if(counter ==5){
+    //   ending();
+    // }
 
   }
 
-  // else{
-  //   ending();
-  // }
+  else{
+    ending();
+  }
   console.log("counter ", counter);
 
     //counter++;
