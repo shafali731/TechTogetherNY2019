@@ -50,25 +50,25 @@ var game = [
 
   var rect1 = {
       x:20*3.2,
-      y:100*4,
+      y:32*4,
       width:20*3.2,
       height:10*4
   };
   var rect2 = {
-      x:60*3.2,
-      y:100*4,
+      x:20*3.2,
+      y:42*4,
       width:20*3.2,
       height:10*4
   };
   var rect3 = {
-      x:100*3.2,
-      y:100*4,
+      x:20*3.2,
+      y:52*4,
       width:20*3.2,
       height:10*4
   };
   var rect4 = {
-      x:140*3.2,
-      y:100*4,
+      x:20*3.2,
+      y:62*4,
       width:20*3.2,
       height:10*4
   };
@@ -105,13 +105,15 @@ function rects(){
   // if(counter <5){
 context.beginPath();
 var pic = new Image();
-console.log(b_count);
+console.log("b_count", b_count);
 pic.src= backgrounds[b_count];
+if(b_count <4){b_count ++;}
+console.log(pic.src);
 context.drawImage(pic, 0, 0, 960/3.2, 600/4);
-context.rect(20, 100, 20, 10);
+// context.rect(20, 100, 20, 10);
 context.fillStyle = '#FF0000';
 // context.fillStyle = 'rgba(225,225,225,10)';
-context.fillRect(20,100,20,10);
+context.fillRect(20,32,20,7);
 //context.fill();
 context.lineWidth = 1;
 context.strokeStyle = '#FF0000';
@@ -122,13 +124,13 @@ context.fillStyle = '#000000';
  // context.fillText('Start', 5, 5);
  context.textAlign="center";
 context.textBaseline = "middle";
- context.fillText("1",30,105);
+ context.fillText("1",30,36);
 //rect2
  context.beginPath();
- context.rect(60, 100, 20, 10);
+ // context.rect(60, 100, 20, 10);
  context.fillStyle = '#FF0000';
  // context.fillStyle = 'rgba(225,225,225,10)';
- context.fillRect(60,100,20,10);
+ context.fillRect(20,42,20,7);
  //context.fill();
  context.lineWidth = 1;
  context.strokeStyle = '#FF0000';
@@ -139,13 +141,13 @@ context.textBaseline = "middle";
   // context.fillText('Start', 5, 5);
   context.textAlign="center";
  context.textBaseline = "middle";
-  context.fillText("2",70,105);
+  context.fillText("2",30,46);
 //rect3
  context.beginPath();
- context.rect(100, 100, 20, 10);
+ // context.rect(100, 100, 20, 10);
  context.fillStyle = '#FF0000';
  // context.fillStyle = 'rgba(225,225,225,10)';
- context.fillRect(100,100,20,10);
+ context.fillRect(20,52,20,7);
  //context.fill();
  context.lineWidth = 1;
  context.strokeStyle = '#FF0000';
@@ -156,13 +158,13 @@ context.textBaseline = "middle";
   // context.fillText('Start', 5, 5);
   context.textAlign="center";
  context.textBaseline = "middle";
-  context.fillText("3",110,105);
+  context.fillText("3",30,56);
 //rect4
  context.beginPath();
- context.rect(140, 100, 20, 10);
+ // context.rect(140, 100, 20, 10);
  context.fillStyle = '#FF0000';
  // context.fillStyle = 'rgba(225,225,225,10)';
- context.fillRect(140,100,20,10);
+ context.fillRect(20,62,20,7);
  //context.fill();
  context.lineWidth = 1;
  context.strokeStyle = '#FF0000';
@@ -173,8 +175,8 @@ context.textBaseline = "middle";
   // context.fillText('Start', 5, 5);
   context.textAlign="center";
  context.textBaseline = "middle";
-  context.fillText("4",150,105);
-  if(b_count <4){b_count ++;}
+  context.fillText("4",30,66);
+
 // }
 // else{
 //   return false;
@@ -185,17 +187,19 @@ context.textBaseline = "middle";
 }
 
 dvd_but.addEventListener('click', function(evt){
+  b_count = 0;
+
+
   // if(counter <5){
-    context.clearRect(0,0,960,600);
-    console.log("work")
+  //  context.clearRect(0,0,960,600);
+    // console.log("work")
     // while (!button_pressed){
-      console.log("i");
-      b_count = 0;
+      // console.log("i");
     rects();
-    console.log("hello");
+    // console.log("hello");
    // }
   button_pressed = false;
-    console.log("hfei");
+    // console.log("hfei");
     //context.clearRect(0,0,960,600);
     // counter ++;
   }
@@ -204,7 +208,7 @@ dvd_but.addEventListener('click', function(evt){
  , false)
 function ending(){
   window.location.href = "../templates/endpage.html";
-  console.log("hduh");
+  // console.log("hduh");
 }
 
 //The rectangle should have x,y,width,height properties
@@ -275,6 +279,7 @@ canvas.addEventListener('click', function(evt) {
     }
     else{
       alert('You didn\'t click an option! ');
+      b_count --;
       counter --;
     }
     counter ++;
