@@ -309,7 +309,7 @@ function similarities(){
 similarities();
 console.log(dif);
 localStorage.setItem("differ", dif);
-localStorage.setItem("car", career);
+localStorage.setItem("car", careers);
 
 
 
