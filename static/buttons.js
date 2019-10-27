@@ -109,7 +109,7 @@ console.log("b_count", b_count);
 pic.src= backgrounds[b_count];
 if(b_count <4){b_count ++;}
 console.log(pic.src);
-context.drawImage(pic, 0, 0, 960/3.2, 600/4);
+context.drawImage(pic, 0, 0, 960, 600);
 // context.rect(20, 100, 20, 10);
 context.fillStyle = '#FF0000';
 // context.fillStyle = 'rgba(225,225,225,10)';
