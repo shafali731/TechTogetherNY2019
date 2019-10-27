@@ -2,16 +2,17 @@ var bu_clicked = 0;
 var b_count = 0;
 var counter= 0;
 var dvd_but = document.getElementById("start");
-var leadership =0;
-var social_skills =0;
-var challenging =0;
-var creativity =0;
-var hands_on =0;
-var new_idea = 0;
-var patience = 0;
-var flexibility = 0;
-var mastery = 0;
-var problem_solving = 0;
+var attributes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+// var leadership =0;
+// var social_skills =0;
+// var challenging =0;
+// var creativity =0;
+// var hands_on =0;
+// var new_idea = 0;
+// var patience = 0;
+// var flexibility = 0;
+// var mastery = 0;
+// var problem_solving = 0;
 var backgrounds = ["../images/question1.png","../images/question2.png","../images/question3.png","../images/question4.png","../images/question5.png"];
 
 
@@ -35,17 +36,30 @@ var game = [
 [2,0,5,3,5,0,0,0,5,0]
 ],
 [
-[1,0,6,3,5,0,0,0,4,1],
-[2,0,3,0,5,0,4,0,6,6],
-[1,1,3,6,3,0,1,3,1,1],
-[8,1,2,3,4,5,6,7,8,7]
+[1,0,6,3,4,1,0,0,4,1],
+[2,0,3,0,4,0,5,0,6,6],
+[1,1,3,6,2,1,1,3,1,1],
+[1,1,3,5,2,3,1,3,0,1]
 ],
  [
-[1,2,3,4,5,6,7,8,9,5],
-[0,1,2,3,4,5,6,7,8,5],
-[0,2,3,3,3,3,4,4,6,8],
-[8,1,2,3,4,5,6,7,8,8]
+[3,0,5,1,4,0,1,2,3,1],
+[3,2,0,1,0,2,1,6,0,5],
+[3,3,0,4,0,1,5,3,0,1],
+[6,4,0,1,0,4,2,2,0,1]
 ],
+]
+
+var careers =[
+  [5, 5, 10, 25, 15, 10, 5, 10, 5, 10], // game development
+  [0, 3, 5, 30, 15, 20, 5, 10, 10, 2], // graphic design
+  [5, 3, 20, 2, 10, 10, 8, 10, 7, 25], // data science
+  [10, 8, 20, 5, 10, 7, 5, 5, 5, 25], // software developer
+  [15, 5, 15, 5, 15, 5, 5, 5, 15, 5], // systems administrator
+  [10, 5, 15, 10, 20, 10, 5, 5, 15, 15], // computer architecture
+  [3, 2, 15, 10, 5, 10, 10, 5, 25, 15], // ai/machine learning
+  [15, 5, 25, 5, 15, 5, 5, 5, 15, 15], // cybersecurity
+  [5, 5, 20, 10, 20, 10, 5, 5, 5, 15], // robotics
+  [5, 5, 10, 5, 15, 10, 25, 5, 15, 5] // computer research
 ]
 
   var rect1 = {
@@ -225,57 +239,29 @@ canvas.addEventListener('click', function(evt) {
 
     if (isInside(mousePos,rect1)) {
       bu_clicked = 0;
-      leadership += game[counter][bu_clicked][0];
-      social_skills += game[counter][bu_clicked][1];
-       challenging += game[counter][bu_clicked][2];
-       creativity += game[counter][bu_clicked][3];
-       hands_on += game[counter][bu_clicked][4];
-       new_idea +=  game[counter][bu_clicked][5];
-       patience +=  game[counter][bu_clicked][6];
-       flexibility +=  game[counter][bu_clicked][7];
-       mastery +=  game[counter][bu_clicked][8];
-       problem_solving += game[counter][bu_clicked][9];
+      for (var i = 0; i < 10; i++){
+        attributes[i] += game[counter][bu_clicked][i];
+     }
 
 
     }
     else if (isInside(mousePos,rect2)){
       bu_clicked = 1;
-      leadership += game[counter][bu_clicked][0];
-      social_skills += game[counter][bu_clicked][1];
-       challenging += game[counter][bu_clicked][2];
-       creativity += game[counter][bu_clicked][3];
-       hands_on += game[counter][bu_clicked][4];
-       new_idea +=  game[counter][bu_clicked][5];
-       patience +=  game[counter][bu_clicked][6];
-       flexibility +=  game[counter][bu_clicked][7];
-       mastery +=  game[counter][bu_clicked][8];
-       problem_solving += game[counter][bu_clicked][9];
+      for (var i = 0; i < 10; i++){
+        attributes[i] += game[counter][bu_clicked][i];
+     }
     }
     else if (isInside(mousePos,rect3)){
       bu_clicked = 2;
-      leadership += game[counter][bu_clicked][0];
-      social_skills += game[counter][bu_clicked][1];
-       challenging += game[counter][bu_clicked][2];
-       creativity += game[counter][bu_clicked][3];
-       hands_on += game[counter][bu_clicked][4];
-       new_idea +=  game[counter][bu_clicked][5];
-       patience +=  game[counter][bu_clicked][6];
-       flexibility +=  game[counter][bu_clicked][7];
-       mastery +=  game[counter][bu_clicked][8];
-       problem_solving += game[counter][bu_clicked][9];
+      for (var i = 0; i < 10; i++){
+        attributes[i] += game[counter][bu_clicked][i];
+     }
      }
     else if (isInside(mousePos,rect4)){
       bu_clicked = 3;
-      leadership += game[counter][bu_clicked][0];
-      social_skills += game[counter][bu_clicked][1];
-       challenging += game[counter][bu_clicked][2];
-       creativity += game[counter][bu_clicked][3];
-       hands_on += game[counter][bu_clicked][4];
-       new_idea +=  game[counter][bu_clicked][5];
-       patience +=  game[counter][bu_clicked][6];
-       flexibility +=  game[counter][bu_clicked][7];
-       mastery +=  game[counter][bu_clicked][8];
-       problem_solving += game[counter][bu_clicked][9];
+      for (var i = 0; i < 10; i++){
+        attributes[i] += game[counter][bu_clicked][i];
+     }
     }
     else{
       alert('You didn\'t click an option! ');
@@ -299,10 +285,33 @@ canvas.addEventListener('click', function(evt) {
   console.log("leadership ", leadership);
   console.log("problem ", problem_solving);
   localStorage.setItem("leadership", leadership);
-  // var obj = {""}
-  // localStorage.setItem('myStorage', JSON.stringify(obj));
-
-
-
 
 }, false);
+
+// dictionary[string] =
+// dict(){
+//   "b;ah" : val;
+//
+// }
+
+var dif = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+function similarities(){
+  for (var i = 0; i < 10; i++){
+    var sum = 0;
+    for (var j = 0; j < 10; j++){
+      sum = Math.pow(careers[i][j] - attributes[j], 2);
+    }
+    dif[i] = Math.sqrt(sum);
+  }
+
+}
+similarities();
+console.log(dif);
+localStorage.setItem("differ", dif);
+localStorage.setItem("car", career);
+
+
+
+// localStorage.setItem('differ', JSON.stringify(dif));
+// localStorage.setItem('car', JSON.s)
