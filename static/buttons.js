@@ -3,7 +3,7 @@ var context = canvas.getContext('2d');
 var bu_clicked = 0;
 var b_count = 0;
 var counter= 0;
-// var dvd_but = document.getElementById("start");
+var dvd_but = document.getElementById("start");
 var attributes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 // var leadership =0;
 // var social_skills =0;
@@ -202,7 +202,7 @@ context.textBaseline = "middle";
 }
 
 
-document.addEventListener('load', function(evt){
+dvd_but.addEventListener('click', function(evt){
   b_count = 0;
 
 
@@ -211,10 +211,10 @@ document.addEventListener('load', function(evt){
     // console.log("work")
     // while (!button_pressed){
       // console.log("i");
-      var pics = new Image();
-      console.log("b_count", b_count);
-      pics.src= backgrounds[b_count];
-      context.drawImage(pics, 0, 0, 960, 600);
+      // var pics = new Image();
+      // console.log("b_count", b_count);
+      // pics.src= backgrounds[b_count];
+      // context.drawImage(pics, 0, 0, 960, 600);
     rects();
     // console.log("hello");
    // }
@@ -275,22 +275,22 @@ canvas.addEventListener('click', function(evt) {
       counter --;
     }
     counter ++;
-    // if(counter ==5){
-    //   ending();
-    // }
+    if(counter ==5){
+      ending();
+    }
 
   }
 
-  else{
-    ending();
-  }
+  // else{
+  //   ending();
+  // }
   console.log("counter ", counter);
 
     //counter++;
   // }
-  console.log("leadership ", leadership);
-  console.log("problem ", problem_solving);
-  localStorage.setItem("leadership", leadership);
+  // console.log("leadership ", leadership);
+  // console.log("problem ", problem_solving);
+  // localStorage.setItem("leadership", leadership);
 
 }, false);
 
