@@ -9,11 +9,21 @@
     <!-- <link rel="stylesheet" type="text/css" href="../static/app.css"> -->
 </head>
 <style>
+  .chart rect {
+  	fill: steelblue;
+  }
+
+  .chart text {
+  	fill: white;
+  	font: 10px sans-serif;
+  	text-anchor: end;
+  }
 
 </style>
 <body>
 	<h1>Results</h1>
-  <div id="career"></div>
+  <svg class="chart"></svg>
+  <script src="http://d3js.org/d3.v5.min.js" charset="utf-8"></script>
 
   <script src= "../static/end.js"> </script>
 
