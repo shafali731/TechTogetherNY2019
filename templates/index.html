@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Health Data Visualization</title>
-    <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script> -->
     <!-- <script src="../static/buttons.js"></script> -->
 
     <!-- <link rel="stylesheet" type="text/css" href="../static/app.css"> -->
@@ -17,24 +17,32 @@ canvas {
  width: 960px;
  height: 600px;
  position: absolute;
- top: 0;
+ top: 15;
  bottom: 0;
  left: 0;
  right: 0;
 }
-	/* body {background-color : rgb(201, 76, 76) ;}
-	h1{color: #FF1439 ; text-align: center } */
+	 body {background-color : rgb(201, 76, 76) ;}
+	h1{color: #FF1439 ; text-align: center }
+  button{
+    height: 40px;
+  }
+
 </style>
 <body>
 	<div>
-		<!-- <h1>Which Tech Job is best Suited for you</h1> -->
+		 <h1>Which Tech Job is best Suited for you</h1>
 		<canvas id = "playground" ></canvas>
-    <button id= "start"> </button>
+
 
     </div>
+
+    <button id= "start">Start </button>
     <!-- <button id="clear">clear</button> -->
 
     <script src="../static/buttons.js"></script>
+    <script src= "../static/end.js"> </script>
+
 
 
     <!-- <div id="filter"></div>

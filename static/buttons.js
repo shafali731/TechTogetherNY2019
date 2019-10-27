@@ -1,12 +1,52 @@
-var button_pressed=false;
+var bu_clicked = 0;
 var counter= 0;
 var dvd_but = document.getElementById("start");
-var first_game = [
-  [1,2,3,4,5,6,7,8,9,10],
-  [0,1,2,3,4,5,6,7,8,9],
-  [0,2,3,3,3,3,4,4,5,6],
-  [8,1,2,3,4,5,6,7,8,9]
+var leadership =0;
+var social_skills =0;
+var challenging =0;
+var creativity =0;
+var hands_on =0;
+var new_idea = 0;
+var patience = 0;
+var multitude = 0;
+var mastery = 0;
+var problem_solving = 0;
+
+
+
+var game = [
+  [
+  [1,2,3,4,5,6,7,8,9,3],
+  [0,1,2,3,4,5,6,7,8,3],
+  [0,2,3,3,3,3,4,4,5,3],
+  [8,1,2,3,4,5,6,7,8,5]
+],
+[
+[1,2,3,4,5,6,7,8,9,5],
+[0,1,2,3,4,5,6,7,8,5],
+[0,2,3,3,3,3,4,4,5,6],
+[8,1,2,3,4,5,6,7,8,6]
+],
+[
+[1,2,3,4,5,6,7,8,9,6],
+[0,1,2,3,4,5,6,7,8,7],
+[0,2,3,3,3,3,4,4,5,8],
+[8,1,2,3,4,5,6,7,8,9]
+],
+[
+[1,2,3,4,5,6,7,8,9,3],
+[0,1,2,3,4,5,6,7,8,5],
+[0,2,3,3,3,3,4,4,5,5],
+[8,1,2,3,4,5,6,7,8,7]
+],
+ [
+[1,2,3,4,5,6,7,8,9,5],
+[0,1,2,3,4,5,6,7,8,5],
+[0,2,3,3,3,3,4,4,6,8],
+[8,1,2,3,4,5,6,7,8,8]
+],
 ]
+
   var rect1 = {
       x:20*3.2,
       y:100*4,
@@ -61,6 +101,7 @@ function isInside(pos, rect){
 var canvas = document.getElementById('playground');
 var context = canvas.getContext('2d');
 function rects(){
+  // if(counter <5){
 context.beginPath();
 context.rect(20, 100, 20, 10);
 context.fillStyle = '#FF0000';
@@ -128,27 +169,36 @@ context.textBaseline = "middle";
   context.textAlign="center";
  context.textBaseline = "middle";
   context.fillText("4",150,105);
+// }
+// else{
+//   return false;
+// }
+// counter ++;
+// rects();
    // return false;
 }
 
 dvd_but.addEventListener('click', function(evt){
-  while(counter <5){
+  // if(counter <5){
     context.clearRect(0,0,960,600);
     console.log("work")
     // while (!button_pressed){
       console.log("i");
     rects();
-    console.log("uihiu");
+    console.log("hello");
    // }
   button_pressed = false;
     console.log("hfei");
     //context.clearRect(0,0,960,600);
-    counter ++;
+    // counter ++;
   }
   //if(counter >=5){
   //  context.clearRect(0,0,960,600);}
-} , false)
-
+ , false)
+function ending(){
+  window.location.href = "../templates/endpage.html";
+  console.log("hduh");
+}
 
 //The rectangle should have x,y,width,height properties
 
@@ -156,23 +206,80 @@ dvd_but.addEventListener('click', function(evt){
 canvas.addEventListener('click', function(evt) {
     // Playbutton(200,200,200,200,red,red);
   //  makeRects();
+  // while(counter <5){
+    if(counter <5){
     var mousePos = getMousePos(canvas, evt);
 
     if (isInside(mousePos,rect1)) {
-        alert('clicked inside rect1');
+      bu_clicked = 0;
+      leadership += game[counter][bu_clicked][0];
+      social_skills += game[counter][bu_clicked][1];
+       challenging += game[counter][bu_clicked][2];
+       creativity += game[counter][bu_clicked][3];
+       hands_on += game[counter][bu_clicked][4];
+       new_idea +=  game[counter][bu_clicked][5];
+       patience +=  game[counter][bu_clicked][6];
+       multitude +=  game[counter][bu_clicked][7];
+       mastery +=  game[counter][bu_clicked][8];
+       problem_solving += game[counter][bu_clicked][9];
+
+
     }
     else if (isInside(mousePos,rect2)){
-      alert('clicked inside rect2');
+      bu_clicked = 1;
+      leadership += game[counter][bu_clicked][0];
+      social_skills += game[counter][bu_clicked][1];
+       challenging += game[counter][bu_clicked][2];
+       creativity += game[counter][bu_clicked][3];
+       hands_on += game[counter][bu_clicked][4];
+       new_idea +=  game[counter][bu_clicked][5];
+       patience +=  game[counter][bu_clicked][6];
+       multitude +=  game[counter][bu_clicked][7];
+       mastery +=  game[counter][bu_clicked][8];
+       problem_solving += game[counter][bu_clicked][9];
     }
     else if (isInside(mousePos,rect3)){
-      alert('clicked inside rect3');
-    }
+      bu_clicked = 2;
+      leadership += game[counter][bu_clicked][0];
+      social_skills += game[counter][bu_clicked][1];
+       challenging += game[counter][bu_clicked][2];
+       creativity += game[counter][bu_clicked][3];
+       hands_on += game[counter][bu_clicked][4];
+       new_idea +=  game[counter][bu_clicked][5];
+       patience +=  game[counter][bu_clicked][6];
+       multitude +=  game[counter][bu_clicked][7];
+       mastery +=  game[counter][bu_clicked][8];
+       problem_solving += game[counter][bu_clicked][9];
+     }
     else if (isInside(mousePos,rect4)){
-      alert('clicked inside rect4');
+      bu_clicked = 3;
+      leadership += game[counter][bu_clicked][0];
+      social_skills += game[counter][bu_clicked][1];
+       challenging += game[counter][bu_clicked][2];
+       creativity += game[counter][bu_clicked][3];
+       hands_on += game[counter][bu_clicked][4];
+       new_idea +=  game[counter][bu_clicked][5];
+       patience +=  game[counter][bu_clicked][6];
+       multitude +=  game[counter][bu_clicked][7];
+       mastery +=  game[counter][bu_clicked][8];
+       problem_solving += game[counter][bu_clicked][9];
     }
     else{
-        alert('clicked outside rect');
+      alert('You didn\'t click an option! ');
+      counter --;
     }
-    button_pressed = true;
+
+  }
+  else{
+    ending();
+  }
+  counter ++;
+    //counter++;
+  // }
+  console.log("leadership ", leadership);
+  console.log("problem ", problem_solving);
+
 
 }, false);
+
+console.log("leadership ", leadership);
