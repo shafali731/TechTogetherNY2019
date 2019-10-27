@@ -1,4 +1,5 @@
 var bu_clicked = 0;
+var b_count = 0;
 var counter= 0;
 var dvd_but = document.getElementById("start");
 var leadership =0;
@@ -8,10 +9,10 @@ var creativity =0;
 var hands_on =0;
 var new_idea = 0;
 var patience = 0;
-var multitude = 0;
+var flexibility = 0;
 var mastery = 0;
 var problem_solving = 0;
-
+var backgrounds = ["../images/question1.png","../images/question2.png","../images/question3.png","../images/question4.png","../images/question5.png"];
 
 
 var game = [
@@ -103,6 +104,10 @@ var context = canvas.getContext('2d');
 function rects(){
   // if(counter <5){
 context.beginPath();
+var pic = new Image();
+console.log(b_count);
+pic.src= backgrounds[b_count];
+context.drawImage(pic, 0, 0, 960/3.2, 600/4);
 context.rect(20, 100, 20, 10);
 context.fillStyle = '#FF0000';
 // context.fillStyle = 'rgba(225,225,225,10)';
@@ -169,6 +174,7 @@ context.textBaseline = "middle";
   context.textAlign="center";
  context.textBaseline = "middle";
   context.fillText("4",150,105);
+  if(b_count <4){b_count ++;}
 // }
 // else{
 //   return false;
@@ -184,6 +190,7 @@ dvd_but.addEventListener('click', function(evt){
     console.log("work")
     // while (!button_pressed){
       console.log("i");
+      b_count = 0;
     rects();
     console.log("hello");
    // }
@@ -208,6 +215,8 @@ canvas.addEventListener('click', function(evt) {
   //  makeRects();
   // while(counter <5){
     if(counter <5){
+      rects();
+
     var mousePos = getMousePos(canvas, evt);
 
     if (isInside(mousePos,rect1)) {
@@ -219,7 +228,7 @@ canvas.addEventListener('click', function(evt) {
        hands_on += game[counter][bu_clicked][4];
        new_idea +=  game[counter][bu_clicked][5];
        patience +=  game[counter][bu_clicked][6];
-       multitude +=  game[counter][bu_clicked][7];
+       flexibility +=  game[counter][bu_clicked][7];
        mastery +=  game[counter][bu_clicked][8];
        problem_solving += game[counter][bu_clicked][9];
 
@@ -234,7 +243,7 @@ canvas.addEventListener('click', function(evt) {
        hands_on += game[counter][bu_clicked][4];
        new_idea +=  game[counter][bu_clicked][5];
        patience +=  game[counter][bu_clicked][6];
-       multitude +=  game[counter][bu_clicked][7];
+       flexibility +=  game[counter][bu_clicked][7];
        mastery +=  game[counter][bu_clicked][8];
        problem_solving += game[counter][bu_clicked][9];
     }
@@ -247,7 +256,7 @@ canvas.addEventListener('click', function(evt) {
        hands_on += game[counter][bu_clicked][4];
        new_idea +=  game[counter][bu_clicked][5];
        patience +=  game[counter][bu_clicked][6];
-       multitude +=  game[counter][bu_clicked][7];
+       flexibility +=  game[counter][bu_clicked][7];
        mastery +=  game[counter][bu_clicked][8];
        problem_solving += game[counter][bu_clicked][9];
      }
@@ -260,7 +269,7 @@ canvas.addEventListener('click', function(evt) {
        hands_on += game[counter][bu_clicked][4];
        new_idea +=  game[counter][bu_clicked][5];
        patience +=  game[counter][bu_clicked][6];
-       multitude +=  game[counter][bu_clicked][7];
+       flexibility +=  game[counter][bu_clicked][7];
        mastery +=  game[counter][bu_clicked][8];
        problem_solving += game[counter][bu_clicked][9];
     }
@@ -268,12 +277,18 @@ canvas.addEventListener('click', function(evt) {
       alert('You didn\'t click an option! ');
       counter --;
     }
+    counter ++;
+    if(counter ==5){
+      ending();
+    }
 
   }
-  else{
-    ending();
-  }
-  counter ++;
+
+  // else{
+  //   ending();
+  // }
+  console.log("counter ", counter);
+
     //counter++;
   // }
   console.log("leadership ", leadership);
